@@ -2,15 +2,6 @@ const number = 24; //Número a descomponer en factores primos.
 let counter = 2; //Primer primo.
 const factoresPrimos = []; /* [{"2", 3}, {"3", 1}] */ 
 
-const esNumeroPrimo = (numero) =>{
-    if (numero == 0 || numero == 1 || numero == 4) return false;
-
-    for (let x = 2; x < numero / 2; x++) {
-		if (numero % x == 0) return false;
-	}
-
-    return true;
-}
 
 const descomponerEnPrimos = (number) =>{
     if(esNumeroPrimo(counter)){
@@ -23,6 +14,16 @@ const descomponerEnPrimos = (number) =>{
     }
    
     if(number>1 && counter <= number) descomponerEnPrimos(number);
+}
+
+const esNumeroPrimo = (numero) =>{
+    if (numero == 0 || numero == 1 || numero == 4) return false;
+
+    for (let x = 2; x < numero / 2; x++) {
+		if (numero % x == 0) return false;
+	}
+
+    return true;
 }
 
 const registrarPrimo = () =>{
