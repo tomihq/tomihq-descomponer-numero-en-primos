@@ -1,11 +1,11 @@
-interface IFactoresPrimos {
+interface IFactorPrimo {
     counter: number;
     exponent: number;
 }
 
-const number:number = 48; //Número a descomponer en factores primos.
+const number:number = 24; //Número a descomponer en factores primos.
 let counter:number = 2; //Primer primo.
-const factoresPrimos:IFactoresPrimos[] = [];
+const factoresPrimos:IFactorPrimo[] = [];
 
 
 const descomponerEnPrimos = (number:number):void =>{
@@ -46,7 +46,7 @@ const registrarPrimo = ():void =>{
 descomponerEnPrimos(number);
 
 console.log("La descomposición del número", number, "en primos es... ");
-factoresPrimos.forEach((factor) =>{
+factoresPrimos.forEach((factor:IFactorPrimo) =>{
     console.log(factor.counter + " con exponente " + factor.exponent)
 })
 console.log("Para conseguir el número ", number, " nuevamente, eleve cada número a su exponente, y luego multiplíquelos.")
